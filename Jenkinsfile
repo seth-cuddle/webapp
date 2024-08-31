@@ -20,7 +20,8 @@ tools{
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@3.80.188.95:/prod/apache-tomcat-9.0.93/webapps/webapp.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@ec2-3-80-188-95.compute-1.amazonaws.com:/prod/apache-tomcat-9.0.93/webapps/webapp.war'
+             
               }      
            }       
     }
